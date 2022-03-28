@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="C:\Users\User\Desktop\calculater\css\calculator.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div>
+        <h1>calculator</h1>
+        <form name="cacl" >
+        <input class="form1" type="text" name="input_box1" id="screen2" >
+        <input class="form1" type="text" name="text" id="screen" ><br>
+    </form>
+
+        <i class="fa fa-history" style="font-size:24px "></i>
+        <i class="fa fa fa-bars" style="font-size:24px "></i>
+        <i class="fa fa-dollar" onclick="doller()" style="font-size:24px"></i><br>
+
+        <button  type="button" value="sin" name="sin" onclick="document.cacl.text.value=Math.sin(document.cacl.text.value)"> <b>sin</b></button>
+        <button type="button" value="cos" name="cos" onclick="document.cacl.text.value=Math.cos(document.cacl.text.value)"><b>cos</b></button>
+        <button type="button" value="tan" name="tan" onclick="document.cacl.text.value=Math.tan(document.cacl.text.value)"><b>tan</b></button>
+        <button type="button" value="sqr" name="sqr" onclick="document.cacl.text.value=Math.pow(document.cacl.text.value,2)"><b>x<sup>2</sup></b></button><br>
+        <button type="button" value="qube" name="qube" onclick="document.cacl.text.value=Math.pow(document.cacl.text.value,3)"><b>x<sup>3</sup></b></button>
+        <button type="button" value="sqrt" name="sqrt" onclick="document.cacl.text.value=Math.sqrt(document.cacl.text.value,1/2)"><b>&radic;</b></button>
+
+
+        <button type="button" value="rootqube" name="rootqube" onclick="document.cacl.text.value=Math.sqrt(document.cacl.text.value,1/3)"><b>&#8731;</b></button>
+        <button type="button" value="log" name="divide" onclick="document.cacl.text.value=Math.log(document.cacl.text.value)"><b>log</b></button><br>
+
+
+        <button type="button" value="AC" name="AC" onclick="document.cacl.text.value=''"> <b>AC</b></button>
+        <button type="button" value="Del" name="Del" onclick="del()"><b>Del</b></button>
+        <button type="button" value="+/-" name="pm"><b>+/-</b></button>
+        <button type="button" value="/" name="divide" onclick="document.cacl.text.value+='/'"><b>/</b></button><br>
+        <button type="button" value="7" name="seven" onclick="document.cacl.text.value+='7'"><b>7</b></button>
+        <button type="button" value="8" name="eight" onclick="document.cacl.text.value+='8'"><b>8</b></button>
+        <button type="button" value="9" name="nine" onclick="document.cacl.text.value+='9'"><b>9</b></button>
+        <button type="button" value="x" name="multi" onclick="document.cacl.text.value+='*'"><b>x</b></button><br>
+        <button type="button" value="4" name="four" onclick="document.cacl.text.value+='4'"><b>4</b></button>
+        <button type="button" value="5" name="five" onclick="document.cacl.text.value+='5'"><b>5</b></button>
+        <button type="button" value="6" name="six" onclick="document.cacl.text.value+='6'"><b>6</b></button>
+        <button type="button" value="-" name="minus" onclick="document.cacl.text.value+='-'"><b>-</b></button><br>
+        <button type="button" value="1" name="one" onclick="document.cacl.text.value+='1'"><b>1</b></button>
+        <button type="button" value="2" name="tow" onclick="document.cacl.text.value+='2'"><b>2</b></button>
+        <button type="button" value="3" name="three" onclick="document.cacl.text.value+='3'"><b>3</b></button>
+        <button type="button" value="+" name="plus" onclick="document.cacl.text.value+='+'"><b>+</b></button><br>
+        <button type="button" value="%" name="mode" onclick="document.cacl.text.value+='%'"><b>%</b></button>
+        <button type="button" value="0" name="zero" onclick="document.cacl.text.value+='0'"><b>0</b></button>
+        <button type="button" value="." name="dot" onclick="document.cacl.text.value+='.'"><b>.</b></button>
+        <button type="button" value="=" name="equal" onclick="e1()"><b>=</b></button>
+    </div>
+    <script>
+        function del(){
+            let x=document.getElementById('screen').value;
+            document.getElementById("screen").value=x.substring(0,x.length-1);
+
+        }
+        function e1()
+        {
+           document.getElementById("screen2").value=document.cacl.text.value + " =";
+            document.cacl.text.value=eval(document.cacl.text.value);
+        }
+        function doller()
+        {
+            document.getElementById("screen2").value=document.cacl.text.value + " =";
+            let t=document.cacl.text.value;
+            document.cacl.text.value=' ';
+            let val=prompt("enter doller value");
+            document.cacl.text.value=(t/val);
+          //  document.cacl.text.value=eval(document.cacl.text.value);
+        }
+       
+        
+    </script>
+</body>
+</html>
